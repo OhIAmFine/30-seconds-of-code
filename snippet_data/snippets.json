@@ -29,7 +29,7 @@
         "fileName": "allEqual.md",
         "text": "Check if all elements in an array are equal.\n\nUse `Array.prototype.every()` to check if all the elements of the array are the same as the first one.",
         "codeBlocks": {
-          "es6": "const allEqual = arr => arr.every(val => val === arr[0]);",
+          "es6": "const allEqual = arr => arr.every(val => Object.is(val, arr[0]));",
           "es5": "var allEqual = function allEqual(arr) {\n  return arr.every(function (val) {\n    return val === arr[0];\n  });\n};",
           "example": "allEqual([1, 2, 3, 4, 5, 6]); // false\nallEqual([1, 1, 1, 1]); // true"
         },

@@ -8,7 +8,7 @@
   const crypto = typeof require !== "undefined" && require('crypto');
 
   const all = (arr, fn = Boolean) => arr.every(fn);
-  const allEqual = arr => arr.every(val => val === arr[0]);
+  const allEqual = arr => arr.every(val => Object.is(val, arr[0]));
   const any = (arr, fn = Boolean) => arr.some(fn);
   const approximatelyEqual = (v1, v2, epsilon = 0.001) => Math.abs(v1 - v2) < epsilon;
   const arrayToCSV = (arr, delimiter = ',') =>

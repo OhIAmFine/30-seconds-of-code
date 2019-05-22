@@ -5,7 +5,7 @@ Check if all elements in an array are equal.
 Use `Array.prototype.every()` to check if all the elements of the array are the same as the first one.
 
 ```js
-const allEqual = arr => arr.every(val => val === arr[0]);
+const allEqual = arr => arr.every(val => Object.is(val, arr[0]));
 ```
 
 ```js
